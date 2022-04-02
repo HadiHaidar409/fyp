@@ -23,10 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release 
-        
-      - name: Run Tests
-      - run: dotnet test --configuration Release --no-build
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
@@ -56,5 +53,5 @@ jobs:
         with:
           app-name: 'Private-Chef'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_858722A0B2E34515AFEFE3A7253197E9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B60380962429483B9D2AF64C2DC5DF0A }}
           package: .
